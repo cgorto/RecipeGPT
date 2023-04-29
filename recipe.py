@@ -1,9 +1,6 @@
 import os
 import openai
-import json
-import requests
 import tiktoken
-from bs4 import BeautifulSoup
 from config import OPENAI_API_KEY, SEARCH_API_KEY, ENGINE_ID
 
 def num_tokens_from_messages(messages):
@@ -30,3 +27,7 @@ def generate_response(messages):
         messages=messages,
     )
     return response['choices'][0]['message']['content']
+
+def chef(input):
+
+    chef = open("chef.txt", "r")
